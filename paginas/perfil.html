@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aon Corporation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://kit.fontawesome.com/64f534fad9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="w-10/12 m-auto">
+    <div id="contenedorDatos" class="flex flex-col justify-center gap-6 h-screen">
+        <div id="info" class="self-center">
+            <img src="../imagenes/perfil.jpg" alt="Foto candidato" class="w-30 m-auto rounded-full border-2 border-slate-900"/>
+            <div id="parrafoSobreMi" class="hidden">
+                <h1 class="text-2xl font-bold my-3 text-center">Sobre Mi</h1>
+                <p class="text-lg text-center">Hola! Soy Juan Rodriguez y soy ingeniero aerounautico. Me gradué en la universidad de Harvard y trabajé 5 años para la NASA.</p>
+            </div>
+            <div id="parrafoEmail" class="hidden">
+                <h1 class="text-2xl font-bold my-3 text-center">correo electronico</h1>
+                <p class="text-lg text-center">juan.rodriguez@gmail.com</p>
+            </div>
+            <div id="parrafoNacimiento" class="hidden">
+                <h1 class="text-2xl font-bold my-3 text-center">Fecha de nacimiento</h1>
+                <p class="text-lg text-center">22/03/1978</p>
+            </div>
+            <div id="parrafoUbi" class="hidden">
+                <h1 class="text-2xl font-bold my-3 text-center">Ubicación</h1>
+                <p class="text-lg text-center">Madrid, Langosta 2879</p>
+            </div>
+            <div id="parrafoTel" class="hidden">
+                <h1 class="text-2xl font-bold my-3 text-center">Celular</h1>
+                <p class="text-lg text-center">322-2457894</p>
+            </div>
+        </div>
+        <div id="listaDatos">
+            <ul class="flex justify-evenly text-xl">
+                <li id="sobreMi"><i class="fa-solid fa-user"></i></li>
+                <li id="email"><i class="fa-solid fa-envelope"></i></li>
+                <li id="nacimiento"><i class="fa-solid fa-calendar-days"></i></li>
+                <li id="ubicacion"><i class="fa-solid fa-map-location-dot"></i></li>
+                <li id="telefono"><i class="fa-solid fa-phone"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/app2.js"></script>
+</body>
+</html>
