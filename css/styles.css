@@ -21,7 +21,7 @@ body {
 }
 
 #imagenPerfil {
-  animation: saltoImagen 1.0s infinite ease-in-out;
+  animation: saltoImagen 1.0s 3 ease-in-out;
 }
   
 @-webkit-keyframes sk-scaleout {

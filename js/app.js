@@ -1,4 +1,4 @@
-// Variables
+// VARIABLES
 
 const formulario = document.querySelector("#formulario");
 const busquedaPerfil = document.querySelector("#busqueda_perfil");
@@ -7,9 +7,11 @@ const boxCargando = document.querySelector('.contenedor_cargando');
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 const nombreEmpresa = document.querySelector('#nombre');
+const descripcion = document.querySelector('#infoEmpresa');
+const btnSubmit = document.querySelector('#btnEnviar')
 
 
-// Eventos
+// EVENTOS
 
 // Submit del formulario
 formulario.addEventListener('submit', e => {
@@ -27,9 +29,21 @@ formulario.addEventListener('submit', e => {
   },8000);
 });
 
-// Información del cv
+// Validación del formulario
 
+nombreEmpresa.addEventListener('blur', e => {
+  const errorNombre = 'Este nombre no es válido. Debe contener más de 3 caracteres';
+  if(e.target.value.length < 3) {
+    mensajeError(errorNombre, descripcion);
+  }
+})
 
+descripcion.addEventListener('blur', e => {
+  const errorDescripcion = 'Tiene que tener como minimo 20 caracteres';
+  if(e.target.value.length < 21) {
+    mensajeError(errorDescripcion, btnSubmit);
+  }
+})
 
 
 // Animación de texto
@@ -52,6 +66,9 @@ anime.timeline({loop: true})
   });
 
 
+  // FUNCIONES
+
+
 // Transición de carga
 function cargando() {
     busquedaPerfil.classList.add('hidden');
@@ -64,3 +81,12 @@ function cargando() {
     }
 }
 
+
+// Mensaje de error
+
+function mensajeError(mensaje, input) {
+  let mensajeError = document.createElement('span');
+  mensajeError.textContent = mensaje;
+  mensajeError.classList.add('px-4', 'py-2', 'text-red-600', 'bg-red-300', 'text-center', 'w-6/12');
+  input.before(mensajeError);
+}
