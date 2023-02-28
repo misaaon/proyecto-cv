@@ -25,9 +25,11 @@
                 <div class="flex flex-col">
                     <p class="mt-8 text-lg font-bold">Datos de la empresa</p>
                     <label class="mt-5 text-sm flex flex-col"> Nombre de la empresa
-                        <input type="text" class="mt-1 text-slate-900 text-sm rounded px-2 w-10/12" id="nombre" placeholder="Ej: Aon Corporation" name="nombre"required>
+                        <input type="text" class="mt-1 text-slate-900 text-sm rounded px-2 w-10/12 outline-none" id="nombre" placeholder="Ej: Aon Corporation" name="nombre"required>
                     </label>
-                    <textarea name="infoEmpresa" class="mt-3 px-2 text-slate-900 text-sm rounded" rows="4" id="infoEmpresa" placeholder="Ingrese que tipo de perfil está buscando" required></textarea>
+                    <label class="flex flex-col mt-3 text-sm"> Perfil
+                        <textarea name="infoEmpresa" class="mt-1 px-2 text-slate-900 text-sm rounded outline-none" rows="4" id="perfil" placeholder="Ingrese que tipo de perfil está buscando" required></textarea>
+                    </label>
                     <input type="submit" class="mt-3 bg-zinc-300 text-slate-900 py-2 px-3 rounded-sm w-6/12"  value="Buscar Perfil" id="btnEnviar"/>
                 </div>
             </form>
@@ -38,19 +40,15 @@
             <p class="ml3">Buscando candidato...</p>
         </div>
 
-        <section id="perfil" class="hidden text-center mt-24 flex flex-col items-center">
+        <section id="cajaPerfil" class="hidden text-center mt-24 flex flex-col items-center">
             <p class="text-3xl font-bold">¡Este es el candidato perfecto que esta buscando!</p>
             <img id="imagenPerfil" src="imagenes/perfil.jpg" alt="Foto del candidato" class="rounded-full mt-8" />
             <a href="paginas/perfil.html"><button type="button" class="text-white mt-4 px-3 py-2 bg-slate-600 rounded-sm">Gordon Powell</button></a>
         </section>
     </main>
 
-    <footer class="bg-slate-600">
-        <p>Aon Corporation</p>
-        <div id="redes">
-            <a href="#"><i class="fa-brands fa-instagram text-zinc-300"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook text-zinc-300"></i></a>
-        </div>
+    <footer class="bg-slate-600 flex justify-center">
+        <p class="text-zinc-300">Aon Corporation</p>
     </footer>
 
     <script src="js/app.js"></script>

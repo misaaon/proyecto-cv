@@ -2,13 +2,13 @@
 
 const formulario = document.querySelector("#formulario");
 const busquedaPerfil = document.querySelector("#busqueda_perfil");
-const perfil = document.querySelector("#perfil")
+const perfil = document.querySelector("#cajaPerfil")
 const boxCargando = document.querySelector('.contenedor_cargando');
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 const nombreEmpresa = document.querySelector('#nombre');
-const descripcion = document.querySelector('#infoEmpresa');
-const btnSubmit = document.querySelector('#btnEnviar')
+const descripcion = document.querySelector('#perfil');
+const btnSubmit = document.querySelector('#btnEnviar');
 
 
 // EVENTOS
@@ -21,7 +21,6 @@ formulario.addEventListener('submit', e => {
   setTimeout( () => {
       boxCargando.classList.add('hidden');
       header.classList.remove('hidden');
-      body.classList.add('w-10/12', 'm-auto');
       body.classList.remove('bg-slate-600');
       perfil.classList.remove('hidden');
       perfil.classList.add('flex');
@@ -29,21 +28,11 @@ formulario.addEventListener('submit', e => {
   },8000);
 });
 
-// Validación del formulario
 
-nombreEmpresa.addEventListener('blur', e => {
-  const errorNombre = 'Este nombre no es válido. Debe contener más de 3 caracteres';
-  if(e.target.value.length < 3) {
-    mensajeError(errorNombre, descripcion);
-  }
-})
+// Validación de formulario
 
-descripcion.addEventListener('blur', e => {
-  const errorDescripcion = 'Tiene que tener como minimo 20 caracteres';
-  if(e.target.value.length < 21) {
-    mensajeError(errorDescripcion, btnSubmit);
-  }
-})
+nombreEmpresa.addEventListener('blur', validacion);
+descripcion.addEventListener('blur', validacion);
 
 
 // Animación de texto
@@ -81,12 +70,102 @@ function cargando() {
     }
 }
 
+// Validacion formulario
+
+function validacion(e) {
+  if(e.target.value.trim() === '') {
+    alertaError(`El campo ${e.target.id} es obligatorio`, e.target.parentElement);
+    return;
+  }
+
+  eliminarAlerta(e.target.parentElement);
+}
+
+
+// Mostrar alerta de error
+
+function alertaError(mensaje, referencia, input) {
+
+  const alerta = referencia.querySelector('.alerta');
+
+  // Evita que el mensaje de error se siga repitiendo
+  if(alerta) {
+    alerta.remove();
+  }
+
+  // creacion del mensaje de error
+  let error = document.createElement('p');
+  error.textContent = mensaje;
+  error.classList.add('text-center', 'text-sm', 'text-red-700', 'bg-red-200', 'alerta', 'mt-2', 'p-2')
+  referencia.appendChild(error);
+}
+
+function eliminarAlerta(referencia) {
+  const alerta = referencia.querySelector('.alerta');
+
+  // En vez de evitar que se acumulen alertas elimina la alerta que ya está
+  if(alerta) {
+    alerta.remove();
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Mensaje de error
 
-function mensajeError(mensaje, input) {
+/*function mensajeError(referencia,mensaje, input) {
+
+  const mensajeAlerta = document.querySelector('.alerta');
+
+  // Evita que el mensaje de error se ejecute más de una vez
+
+  if(mensajeAlerta) {
+    mensajeAlerta.remove();
+  }
+
   let mensajeError = document.createElement('span');
   mensajeError.textContent = mensaje;
-  mensajeError.classList.add('px-4', 'py-2', 'text-red-600', 'bg-red-300', 'text-center', 'w-6/12');
+  mensajeError.classList.add('px-4', 'py-2', 'text-red-600', 'bg-red-300', 'text-center', 'w-6/12', 'alerta');
   input.before(mensajeError);
 }
+
+function limpiarMensajeError() {
+  const mensajeAlerta = document.querySelector('.alerta');
+
+  if(mensajeAlerta) {
+    mensajeAlerta.remove();
+  }
+}
+*/
