@@ -55,21 +55,3 @@ function eliminarParrafo(a,b,c,d) {
     c.classList.add('hidden');
     d.classList.add('hidden');
 }
-
-/*function crearParrafo(parrafo) {
-
-//Evita que el texto se siga añadiendo cada vez que pasa el mouse
-
-    let texto = document.querySelector('.parrafo');
-
-    if(texto) {
-        remove(texto);
-    }
-
-    // Creación del parrafo
-
-    let descripcion = document.createElement('p');
-    descripcion.classList.add('text-lg', 'text-center' ,'parrafo', 'mt-6', 'ml3');
-    descripcion.textContent = parrafo;
-    info.appendChild(descripcion);
-} */
