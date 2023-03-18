@@ -7,30 +7,73 @@
     <title>Aon Corporation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://kit.fontawesome.com/64f534fad9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-    <header class="flex justify-center pt-12">
-        <img src="imagenes/logo.svg" alt="Logo Empresa" class="w-4/12"/>
+    <header class="flex justify-between items-center pt-2 sticky top-0 bg-neutral-100 z-10">
+        <img src="imagenes/logo.svg" alt="Logo Empresa" class="w-24"/>
+        <i id="btn-menu" class="fa-solid fa-bars text-blue-600 text-3xl pr-6"></i>
     </header>
 
-    <main class="h-screen w-10/12 m-auto">
-        <section id="busqueda_perfil" class="mt-10">
-            <p class="text-center text-2xl font-bold">¡Hola soy Misael Aon de Aon Corporation!</p>
-            <form id="formulario" action="paginas/perfil.html" class="mt-10 bg-slate-600 p-6 text-white flex flex-col">
-                <div class="text-center">
-                    <p>Te invito a que completes el siguiente formulario para ofrecerte un perfil acorde a tus necesidades</p>
+    <nav id="menu-nav" class="hidden">
+        <ul class="flex flex-col justify-center bg-blue-600 text-white">
+            <li class="border-b-2 w-full text-center py-3"><a href="#">Inicio</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#">Sobre Nosotros</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#">Buscá tu candidato</a></li>
+            <li class="w-full text-center py-3"><a href="#">Contactanos</a></li>
+        </ul>
+    </nav>
+    <section id="inicio">
+        <div class="flex flex-col items-center justify-center w-10/12 m-auto mt-24">
+            <p class="text-center text-2xl font-bold">¡Bienvenido a Aon Corporation!</p>
+            <p class="mt-5 text-sm text-center">En Aon Corporation te ayudamos a encontrar los mejores candidatos para tu empresa.
+                Contamos con una amplia base de datos de personas talentosas y capacitadas que buscan oportunidades de empleo en tu sector.</p>
+            <button class="button-5 mt-5" role="button"><a href="#">Busca tu Candidato!</a></button>
+        </div>
+    </section>
+
+    <main>
+
+        <section id="nosotros" class="bg-blue-700 text-white mt-10 pb-20">
+            <div class="w-10/12 m-auto">
+                <h2 class="font-bold text-3xl pt-20">Nosotros</h2>
+                <p class="text-sm mt-4">En nuestra empresa, creemos que la tecnología y la innovación pueden marcar la diferencia en la forma en que las empresas contratan trabajadores. Nos esforzamos por crear una base de datos de trabajadores de alta calidad que permita a las empresas encontrar y seleccionar a los candidatos adecuados para cada puesto.
+                Fundada en 2022, nuestra empresa se ha convertido en un líder en la industria de la contratación gracias a nuestro enfoque en la calidad, la eficiencia y la experiencia del usuario. Nuestro equipo de expertos en tecnología y contratación trabaja incansablemente para mejorar continuamente nuestros servicios y ofrecer la mejor experiencia posible a nuestros clientes.</p>
+            </div>
+        </section>
+
+        <section id="busqueda_perfil" class="text-black">
+            <form id="formulario" action="paginas/perfil.html" class="p-6 flex flex-col">
+                <div>
+                    <h2 class="font-bold text-3xl pt-20">Encontrá tu candidato</h2>
+                    <p class="text-sm mt-2">Te invitamos a que completes el siguiente formulario para ofrecerte un perfil acorde a tus necesidades</p>
                 </div>
-                <div class="flex flex-col">
-                    <p class="mt-8 text-lg font-bold">Datos de la empresa</p>
-                    <label class="mt-5 text-sm flex flex-col"> Nombre de la empresa
-                        <input type="text" class="mt-1 text-slate-900 text-sm rounded px-2 w-10/12 outline-none" id="nombre" placeholder="Ej: Aon Corporation" name="nombre"required>
+                <div class="flex flex-col bg-blue-700 px-6 rounded-md text-white mt-5">
+                    <label class="mt-5 text-sm flex flex-col"> Describir puesto a cubrir
+                        <input type="text" class="mt-1 text-slate-900 text-sm rounded px-2 w-10/12 outline-none" id="nombre" placeholder="Ej: Analista de Datos" name="nombre"required>
                     </label>
-                    <label class="flex flex-col mt-3 text-sm"> Perfil
-                        <textarea name="infoEmpresa" class="mt-1 px-2 text-slate-900 text-sm rounded outline-none" rows="4" id="perfil" placeholder="Ingrese que tipo de perfil está buscando" required></textarea>
+                    <label class="flex flex-col mt-3 text-sm"> Formación Academica
+                        <select id="" class="text-black text-sm">
+                            <option value="">Elegí una opción...</option>
+                            <option value="">Secundario Completo</option>
+                            <option value="">Terciario</option>
+                            <option value="">Universidad</option>
+                        </select>
                     </label>
-                    <input type="submit" class="mt-3 bg-zinc-300 text-slate-900 py-2 px-3 rounded-sm w-6/12 lg:self-center"  value="Buscar Perfil" id="btnEnviar"/>
+                    <label class="hidden"> ¿Qué carrera?
+                        <input type="text" placeholder="Ej: Medicina">
+                    </label>
+                    <label class="flex flex-col mt-3 text-sm"> Experiencia
+                        <select class="text-black">
+                            <option value="">Elegí una opción...</option>
+                            <option value="">1 año</option>
+                            <option value="">2 a 3 años</option>
+                            <option value="">3 años o más</option>
+                        </select>
+                    </label>
+                    <input type="submit" class="button-6 mt-6 mb-6 bg-white self-center"  value="Buscar Perfil" id="btnEnviar"/>
                 </div>
             </form>
         </section>
