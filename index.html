@@ -78,20 +78,53 @@
             </form>
         </section>
 
-        <div class="hidden flex flex-col justify-center items-center contenedor_cargando text-white h-screen w-10/12 m-auto">
+        <div class=" hidden flex flex-col justify-center items-center contenedor_cargando text-black w-10/12 m-auto my-10">
+            <p class="text-center">Gracias por completar el formulario, aguarda un momento que estamos buscando su candidato ideal.</p>
             <div class="spinner"></div>
             <p class="ml3">Buscando candidato...</p>
         </div>
 
-        <section id="cajaPerfil" class="hidden text-center mt-24 flex flex-col items-center">
-            <p class="text-3xl font-bold">¡Este es el candidato perfecto que esta buscando!</p>
-            <img id="imagenPerfil" src="imagenes/perfil.jpg" alt="Foto del candidato" class="rounded-full mt-8" />
-            <a href="paginas/perfil.html"><button type="button" class="text-white mt-4 px-3 py-2 bg-slate-600 rounded-sm">Juan Rodriguez</button></a>
+        <section id="cajaPerfil" class="text-center my-14 w-10/12 m-auto hidden">
+            <div class="flex flex-col items-center bg-blue-700 text-white py-4 rounded-lg shadow-2xl">
+                <p class="text-lg font-bold">¡Este es el candidato perfecto que esta buscando!</p>
+                <img id="imagenPerfil" src="imagenes/perfil.jpg" alt="Foto del candidato" class="rounded-full mt-2 w-20" />
+                <a href="paginas/perfil.html"><button type="button" class="text-black font-bold mt-4 px-3 py-2 bg-white rounded-sm">Juan Rodriguez</button></a>
+            </div>
+        </section>
+
+        <section id="contacto" class="flex flex-col items-center w-10/12 m-auto mt-10">
+            <h2 class="self-start font-bold text-3xl">Contacto</h2>
+            <p class="text-center mt-4">Si tienes alguna duda no dudes en contactarnos!</p>
+            <form class="flex flex-col gap-3 my-10 bg-blue-700 px-8 py-8 rounded-md">
+                <label class="flex flex-col text-white"> Nombre de la empresa
+                    <input type="text" class="text-black text-sm" placeholder="Ej: Aon Corporation">
+                </label>
+                <label class="flex flex-col text-white"> Asunto
+                    <input type="text" class="text-black text-sm">
+                </label>
+                <label class="flex flex-col text-white"> Mensaje
+                    <textarea class="text-black text-sm"></textarea>
+                </label>
+                <input type="submit" class="button-6 mt-6 bg-white self-center">
+            </form>
         </section>
     </main>
 
-    <footer class="bg-slate-600 flex justify-center">
-        <p class="text-zinc-300">Aon Corporation</p>
+    <footer class="bg-blue-700 text-white">
+        <div class="flex justify-between py-6">
+            <p class="pl-4">Aon Corporation</p>
+            <div class="flex flex-col gap-1 pr-4 text-lg">
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/app.js"></script>
