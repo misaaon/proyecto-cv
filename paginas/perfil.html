@@ -12,46 +12,73 @@
 </head>
 <body>
 
+    <header class="flex justify-between items-center pt-2 sticky top-0 bg-neutral-100 z-10">
+        <img src="../imagenes/logo.svg" alt="Logo Empresa" class="w-24"/>
+        <i id="btn-menu" class="fa-solid fa-bars text-blue-600 text-3xl pr-6"></i>
+    </header>
+
+    <nav id="menu-nav" class="hidden">
+        <ul class="flex flex-col justify-center bg-blue-600 text-white">
+            <li class="border-b-2 w-full text-center py-3"><a href="#">Inicio</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#">Sobre Nosotros</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#">Buscá tu candidato</a></li>
+            <li class="w-full text-center py-3"><a href="#">Contactanos</a></li>
+        </ul>
+    </nav>
+
     <main class="h-screen w-10/12 m-auto">
-        <div id="contenedorDatos" class="flex flex-col justify-center gap-6 h-screen">
+        <div id="contenedorDatos" class="flex flex-col mt-24 gap-6">
             <div id="info" class="self-center">
-                <img src="../imagenes/perfil.jpg" alt="Foto candidato" class="w-30 m-auto rounded-full border-2 border-slate-900"/>
+                <img src="../imagenes/perfil.jpg" alt="Foto candidato" class="w-30 m-auto rounded-full border-2 border-slate-900 mb-3"/>
                 <span class="mt-3 text-lg text-center" id="infoClick">Haz click sobre los íconos para ver la información</span>
                 <div id="parrafoSobreMi" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center">Sobre Mi</p>
-                    <p class="text-lg text-center">Hola! Soy Juan Rodriguez y soy ingeniero aerounautico. Me gradué en la universidad de Harvard y trabajé 5 años para la NASA.</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Sobre Mi</p>
+                    <p class="text-sm text-center">Hola! Soy Juan Rodriguez y soy ingeniero aerounautico. Me gradué en la universidad de Harvard y trabajé 5 años para la NASA.</p>
                 </div>
                 <div id="parrafoEmail" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center">correo electronico</p>
-                    <p class="text-lg text-center">juan.rodriguez@gmail.com</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Correo Electronico</p>
+                    <p class="text-sm text-center">juan.rodriguez@gmail.com</p>
                 </div>
                 <div id="parrafoNacimiento" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center">Fecha de nacimiento</p>
-                    <p class="text-lg text-center">22/03/1978</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Fecha de nacimiento</p>
+                    <p class="text-sm text-center">22/03/1978</p>
                 </div>
                 <div id="parrafoUbi" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center">Ubicación</p>
-                    <p class="text-lg text-center">Madrid, Langosta 2879</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Ubicación</p>
+                    <p class="text-sm text-center">Madrid, Langosta 2879</p>
                 </div>
                 <div id="parrafoTel" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center">Celular</p>
-                    <p class="text-lg text-center">322-2457894</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Celular</p>
+                    <p class="text-sm text-center">322-2457894</p>
                 </div>
             </div>
             <div id="listaDatos">
                 <ul class="flex justify-evenly text-xl">
-                    <li id="sobreMi"><i class="fa-solid fa-user"></i></li>
-                    <li id="email"><i class="fa-solid fa-envelope"></i></li>
-                    <li id="nacimiento"><i class="fa-solid fa-calendar-days"></i></li>
-                    <li id="ubicacion"><i class="fa-solid fa-map-location-dot"></i></li>
-                    <li id="telefono"><i class="fa-solid fa-phone"></i></li>
+                    <li id="sobreMi" class="flex flex-col text-xs items-center"><i class="fa-solid fa-user text-lg text-blue-700"></i>Sobre mi</li>
+                    <li id="email" class="flex flex-col text-xs items-center"><i class="fa-solid fa-envelope text-lg text-blue-700"></i>Email</li>
+                    <li id="nacimiento" class="flex flex-col text-xs items-center"><i class="fa-solid fa-calendar-days text-lg text-blue-700"></i>Fecha de <br> nacimiento</li>
+                    <li id="ubicacion" class="flex flex-col text-xs items-center text-center"><i class="fa-solid fa-map-location-dot text-lg text-blue-700"></i>Ubicación</li>
+                    <li id="telefono" class="flex flex-col text-xs items-center"><i class="fa-solid fa-phone text-lg text-blue-700"></i>Tel</li>
                 </ul>
             </div>
         </div>
     </main>
 
-    <footer class="bg-slate-600 flex justify-center">
-        <p class="text-zinc-300">Aon Corporation</p>
+    <footer class="bg-blue-700 text-white">
+        <div class="flex justify-between py-6">
+            <p class="pl-4">Aon Corporation</p>
+            <div class="flex flex-col gap-1 pr-4 text-lg">
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script src="../js/app2.js"></script>
