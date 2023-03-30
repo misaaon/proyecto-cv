@@ -4,36 +4,54 @@ const formulario = document.querySelector("#formulario");
 const busquedaPerfil = document.querySelector("#busqueda_perfil");
 const perfil = document.querySelector("#cajaPerfil")
 const boxCargando = document.querySelector('.contenedor_cargando');
-const header = document.querySelector('header');
-const body = document.querySelector('body');
-const nombreEmpresa = document.querySelector('#nombre');
 const descripcion = document.querySelector('#perfil');
 const btnSubmit = document.querySelector('#btnEnviar');
-
+const btnMenu = document.querySelector('#btn-menu');
+const formContacto = document.querySelector('#formContacto');
 
 // EVENTOS
 
 // Submit del formulario
 formulario.addEventListener('submit', e => {
   e.preventDefault();
-  cargando();
+
+  boxCargando.classList.remove('hidden');
 
   setTimeout( () => {
-      boxCargando.classList.add('hidden');
-      header.classList.remove('hidden');
-      body.classList.remove('bg-slate-600');
-      perfil.classList.remove('hidden');
-      perfil.classList.add('flex');
-
+    boxCargando.classList.add('hidden');
   },8000);
+
+  setTimeout( () => {
+    perfil.classList.remove('hidden');
+  },8000);
+
 });
+
+// Evento Menu
+
+btnMenu.addEventListener('click',() => {
+  const menu = document.querySelector('#menu-nav');
+  if(menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+  } else if(!menu.classList.contains('hidden')) {
+    menu.classList.add('hidden');
+  }
+})
 
 
 // Validación de formulario
 
-nombreEmpresa.addEventListener('blur', validacion);
-descripcion.addEventListener('blur', validacion);
+puesto.addEventListener('blur', validacion);
 
+
+// Submit Form Contacto
+
+formContacto.addEventListener('submit', (e) => {
+  e.preventDefault();
+  mensajeEnviado();
+
+
+})
 
 // Animación de texto
 let textWrapper = document.querySelector('.ml3');
@@ -56,19 +74,6 @@ anime.timeline({loop: true})
 
 
   // FUNCIONES
-
-
-// Transición de carga
-function cargando() {
-    busquedaPerfil.classList.add('hidden');
-
-    if(busquedaPerfil.classList.contains('hidden')) {
-        boxCargando.classList.remove('hidden');
-        header.classList.add('hidden');
-        body.classList.remove('w-10/12', 'm-auto');
-        body.classList.add('bg-slate-600');
-    }
-}
 
 // Validacion formulario
 
@@ -107,6 +112,13 @@ function eliminarAlerta(referencia) {
   if(alerta) {
     alerta.remove();
   }
+}
+
+function mensajeEnviado() {
+  let parrafo = document.createElement('p');
+  parrafo.textContent = 'Mensaje enviado correctamente';
+  parrafo.classList.add('bg-green-300', 'border-green-800', 'text-green-800', 'text-center', 'py-3' , 'px-6', 'mt-3');
+  formContacto.appendChild(parrafo);
 }
 
 

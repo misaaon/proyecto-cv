@@ -12,65 +12,80 @@
 </head>
 <body>
 
-    <header class="flex justify-between items-center pt-2 sticky top-0 bg-neutral-100 z-10">
-        <img src="imagenes/logo.svg" alt="Logo Empresa" class="w-24"/>
-        <i id="btn-menu" class="fa-solid fa-bars text-blue-600 text-3xl pr-6"></i>
+    <header class="flex justify-between items-center pt-2 sticky top-0 bg-neutral-100 z-10 lg:w-10/12 lg:m-auto">
+        <a href="#inicio"><img src="imagenes/logo.svg" alt="Logo Empresa" class="w-24 lg:w-44"/></a>
+        <i id="btn-menu" class="fa-solid fa-bars text-blue-600 text-3xl pr-6 lg:hidden"></i>
+
+        <nav class="hidden lg:block pr-6">
+            <ul class="flex gap-9 text-lg">
+                <li><a href="#inicio" class="hover:text-blue-700">Inicio</a></li>
+                <li><a href="#nosotros" class="hover:text-blue-700">Sobre Nosotros</a></li>
+                <li><a href="#busqueda_perfil" class="hover:text-blue-700">Buscá tu candidato</a></li>
+                <li><a href="#contacto" class="hover:text-blue-700">Contactanos</a></li>
+            </ul>
+        </nav>
     </header>
 
     <nav id="menu-nav" class="hidden">
         <ul class="flex flex-col justify-center bg-blue-600 text-white">
-            <li class="border-b-2 w-full text-center py-3"><a href="#">Inicio</a></li>
-            <li class="border-b-2 w-full text-center py-3"><a href="#">Sobre Nosotros</a></li>
-            <li class="border-b-2 w-full text-center py-3"><a href="#">Buscá tu candidato</a></li>
-            <li class="w-full text-center py-3"><a href="#">Contactanos</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#inicio">Inicio</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#nosotros">Sobre Nosotros</a></li>
+            <li class="border-b-2 w-full text-center py-3"><a href="#busqueda_perfil">Buscá tu candidato</a></li>
+            <li class="w-full text-center py-3"><a href="#contacto">Contactanos</a></li>
         </ul>
     </nav>
-    <section id="inicio">
-        <div class="flex flex-col items-center justify-center w-10/12 m-auto mt-24">
-            <p class="text-center text-2xl font-bold">¡Bienvenido a Aon Corporation!</p>
-            <p class="mt-5 text-sm text-center">En Aon Corporation te ayudamos a encontrar los mejores candidatos para tu empresa.
-                Contamos con una amplia base de datos de personas talentosas y capacitadas que buscan oportunidades de empleo en tu sector.</p>
-            <button class="button-5 mt-5" role="button"><a href="#">Busca tu Candidato!</a></button>
-        </div>
-    </section>
 
-    <main>
+    
+    <main class="lg:w-10/12 lg:m-auto">
 
-        <section id="nosotros" class="bg-blue-700 text-white mt-10 pb-20">
-            <div class="w-10/12 m-auto">
-                <h2 class="font-bold text-3xl pt-20">Nosotros</h2>
-                <p class="text-sm mt-4">En nuestra empresa, creemos que la tecnología y la innovación pueden marcar la diferencia en la forma en que las empresas contratan trabajadores. Nos esforzamos por crear una base de datos de trabajadores de alta calidad que permita a las empresas encontrar y seleccionar a los candidatos adecuados para cada puesto.
-                Fundada en 2022, nuestra empresa se ha convertido en un líder en la industria de la contratación gracias a nuestro enfoque en la calidad, la eficiencia y la experiencia del usuario. Nuestro equipo de expertos en tecnología y contratación trabaja incansablemente para mejorar continuamente nuestros servicios y ofrecer la mejor experiencia posible a nuestros clientes.</p>
+        <section id="inicio">
+            <div class="flex flex-col items-center justify-center w-10/12 m-auto mt-24 lg:flex-row">
+                <div class="lg:flex lg:flex-col flex flex-col items-center lg:w-6/12 lg:py-52">
+                    <p class="text-center text-2xl font-bold lg:text-5xl">¡Bienvenido a Aon Corporation!</p>
+                    <p class="mt-5 text-sm text-center lg:text-lg">En Aon Corporation te ayudamos a encontrar los mejores candidatos para tu empresa.
+                    Contamos con una amplia base de datos de personas talentosas y capacitadas que buscan oportunidades de empleo en tu sector.</p>
+                </div>
+                <div class="lg:w-6/12 flex justify-center">
+                    <button class="button-5 mt-5 lg:text-3xl" role="button"><a href="#busqueda_perfil">Busca tu Candidato!</a></button>
+                </div>
             </div>
         </section>
 
-        <section id="busqueda_perfil" class="text-black">
-            <form id="formulario" action="paginas/perfil.html" class="p-6 flex flex-col">
-                <div>
-                    <h2 class="font-bold text-3xl pt-20">Encontrá tu candidato</h2>
-                    <p class="text-sm mt-2">Te invitamos a que completes el siguiente formulario para ofrecerte un perfil acorde a tus necesidades</p>
+        <section id="nosotros" class="bg-blue-700 text-white mt-10 pb-20 lg:flex lg:items-center lg:py-40 lg:px-20 lg:gap-8">
+            <div class="w-10/12 m-auto lg:w-6/12">
+                <h2 class="font-bold text-3xl pt-20 lg:text-5xl">Nosotros</h2>
+                <p class="text-sm mt-4 lg:text-lg">En nuestra empresa, creemos que la tecnología y la innovación pueden marcar la diferencia en la forma en que las empresas contratan trabajadores. Nos esforzamos por crear una base de datos de trabajadores de alta calidad que permita a las empresas encontrar y seleccionar a los candidatos adecuados para cada puesto.
+                Fundada en 2022, nuestra empresa se ha convertido en un líder en la industria de la contratación gracias a nuestro enfoque en la calidad, la eficiencia y la experiencia del usuario. Nuestro equipo de expertos en tecnología y contratación trabaja incansablemente para mejorar continuamente nuestros servicios y ofrecer la mejor experiencia posible a nuestros clientes.</p>
+            </div>
+            <div class="hidden lg:block lg:w-6/12 lg:mt-10">
+                <img src="imagenes/oficina.jpg" alt="Imagen de gente en oficina" class="w-84 flex justify-center"/>
+            </div>
+        </section>
+
+        <section id="busqueda_perfil" class="text-black lg:mt-40">
+            <form id="formulario" action="paginas/perfil.html" class="p-6 flex flex-col lg:flex-row lg:gap-8 ">
+                <div class=" lg:w-6/12">
+                    <h2 class="font-bold text-3xl pt-20 lg:text-5xl">Encontrá tu candidato</h2>
+                    <p class="text-sm mt-2 lg:text-lg">Te invitamos a que completes el siguiente formulario para ofrecerte un perfil acorde a tus necesidades</p>
                 </div>
-                <div class="flex flex-col bg-blue-700 px-6 rounded-md text-white mt-5">
-                    <label class="mt-5 text-sm flex flex-col"> Describir puesto a cubrir
-                        <input type="text" class="mt-1 text-slate-900 text-sm rounded px-2 w-10/12 outline-none" id="nombre" placeholder="Ej: Analista de Datos" name="nombre"required>
+                <div class="flex flex-col bg-blue-700 px-6 rounded-md text-white mt-5 lg:w-6/12 lg:py-20 lg:px-10">
+                    <label class="mt-5 text-sm flex flex-col lg:text-lg"> Describir puesto a cubrir
+                        <input type="text" class="mt-1 text-slate-900 text-sm rounded px-2 w-10/12 outline-none lg:mt-4 lg:text-lg" id="puesto" placeholder="Ej: Analista de Datos" name="nombre"required>
                     </label>
-                    <label class="flex flex-col mt-3 text-sm"> Formación Academica
-                        <select id="" class="text-black text-sm">
-                            <option value="">Elegí una opción...</option>
-                            <option value="">Secundario Completo</option>
-                            <option value="">Terciario</option>
-                            <option value="">Universidad</option>
+                    <label class="flex flex-col mt-3 text-sm lg:text-lg"> Formación Academica
+                        <select id="academia" class="text-black text-sm lg:mt-2 lg:text-lg" required>
+                            <option>Elegí una opción...</option>
+                            <option id="secundario">Secundario Completo</option>
+                            <option id="terciario">Terciario</option>
+                            <option id="universidad">Universidad</option>
                         </select>
                     </label>
-                    <label class="hidden"> ¿Qué carrera?
-                        <input type="text" placeholder="Ej: Medicina">
-                    </label>
-                    <label class="flex flex-col mt-3 text-sm"> Experiencia
-                        <select class="text-black">
-                            <option value="">Elegí una opción...</option>
-                            <option value="">1 año</option>
-                            <option value="">2 a 3 años</option>
-                            <option value="">3 años o más</option>
+                    <label class="flex flex-col mt-3 text-sm lg:mt-2 lg:text-lg"> Experiencia
+                        <select class="text-black lg:mt-2" required> 
+                            <option>Elegí una opción...</option>
+                            <option>1 año</option>
+                            <option>2 a 3 años</option>
+                            <option>3 años o más</option>
                         </select>
                     </label>
                     <input type="submit" class="button-6 mt-6 mb-6 bg-white self-center"  value="Buscar Perfil" id="btnEnviar"/>
@@ -78,32 +93,32 @@
             </form>
         </section>
 
-        <div class=" hidden flex flex-col justify-center items-center contenedor_cargando text-black w-10/12 m-auto my-10">
-            <p class="text-center">Gracias por completar el formulario, aguarda un momento que estamos buscando su candidato ideal.</p>
+        <div class="hidden flex flex-col justify-center items-center contenedor_cargando text-black w-10/12 m-auto my-10">
+            <p class="text-center lg:text-lg">Gracias por completar el formulario, aguarda un momento que estamos buscando su candidato ideal.</p>
             <div class="spinner"></div>
-            <p class="ml3">Buscando candidato...</p>
+            <p class="ml3 lg:text-lg">Buscando candidato...</p>
         </div>
 
-        <section id="cajaPerfil" class="text-center my-14 w-10/12 m-auto hidden">
-            <div class="flex flex-col items-center bg-blue-700 text-white py-4 rounded-lg shadow-2xl">
-                <p class="text-lg font-bold">¡Este es el candidato perfecto que esta buscando!</p>
-                <img id="imagenPerfil" src="imagenes/perfil.jpg" alt="Foto del candidato" class="rounded-full mt-2 w-20" />
-                <a href="paginas/perfil.html"><button type="button" class="text-black font-bold mt-4 px-3 py-2 bg-white rounded-sm">Juan Rodriguez</button></a>
+        <section id="cajaPerfil" class="text-center my-14 w-10/12 m-auto lg:w-6/12 lg:mt-40 hidden">
+            <div class="flex flex-col items-center bg-blue-700 text-white py-4 rounded-lg shadow-2xl lg:py-20">
+                <p class="text-lg font-bold lg:text-3xl">¡Este es el candidato perfecto que esta buscando!</p>
+                <img id="imagenPerfil" src="imagenes/perfil.jpg" alt="Foto del candidato" class="rounded-full mt-2 w-20 lg:w-40" />
+                <a href="paginas/perfil.html"><button type="button" class="text-black font-bold mt-4 px-3 py-2 bg-white rounded-sm lg:text-lg">Juan Rodriguez</button></a>
             </div>
         </section>
 
-        <section id="contacto" class="flex flex-col items-center w-10/12 m-auto mt-10">
-            <h2 class="self-start font-bold text-3xl">Contacto</h2>
-            <p class="text-center mt-4">Si tienes alguna duda no dudes en contactarnos!</p>
-            <form class="flex flex-col gap-3 my-10 bg-blue-700 px-8 py-8 rounded-md">
+        <section id="contacto" class="flex flex-col items-center w-10/12 m-auto mt-10 lg:items-start lg:mt-40">
+            <h2 class="self-start font-bold text-3xl lg:text-5xl">Contacto</h2>
+            <p class="text-center mt-4 lg:text-lg">Si tienes alguna duda no dudes en contactarnos!</p>
+            <form class="flex flex-col gap-3 my-10 bg-blue-700 w-full px-10 py-10 rounded-md lg:w-6/12" id="formContacto">
                 <label class="flex flex-col text-white"> Nombre de la empresa
-                    <input type="text" class="text-black text-sm" placeholder="Ej: Aon Corporation">
+                    <input type="text" class="text-black text-sm lg:w-10/12" placeholder="Ej: Aon Corporation" required />
                 </label>
                 <label class="flex flex-col text-white"> Asunto
-                    <input type="text" class="text-black text-sm">
+                    <input type="text" class="text-black text-sm lg:w-10/12" required />
                 </label>
                 <label class="flex flex-col text-white"> Mensaje
-                    <textarea class="text-black text-sm"></textarea>
+                    <textarea class="text-black text-sm lg:w-10/12" required></textarea>
                 </label>
                 <input type="submit" class="button-6 mt-6 bg-white self-center">
             </form>
@@ -111,9 +126,9 @@
     </main>
 
     <footer class="bg-blue-700 text-white">
-        <div class="flex justify-between py-6">
+        <div class="flex justify-between py-6 lg:text-2xl lg:px-20">
             <p class="pl-4">Aon Corporation</p>
-            <div class="flex flex-col gap-1 pr-4 text-lg">
+            <div class="flex flex-col gap-1 pr-4 text-lg lg:text-2xl lg:flex-row lg:gap-6">
                 <a href="#">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
