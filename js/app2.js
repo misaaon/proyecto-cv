@@ -10,6 +10,7 @@ const parrafoEmail = document.querySelector('#parrafoEmail');
 const parrafoNacimiento = document.querySelector('#parrafoNacimiento');
 const parrafoUbi = document.querySelector('#parrafoUbi');
 const parrafoTel = document.querySelector('#parrafoTel');
+const btnMenu = document.querySelector('#btn-menu');
 
 
 // EVENTOS
@@ -46,6 +47,14 @@ tel.addEventListener('click', () => {
 })
 
 
+btnMenu.addEventListener('click',() => {
+    const menu = document.querySelector('#menu-nav');
+    if(menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+    } else if(!menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+    }
+  })
 
 // FUNCIONES
 

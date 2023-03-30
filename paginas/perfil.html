@@ -12,62 +12,75 @@
 </head>
 <body>
 
-    <header class="flex justify-between items-center pt-2 sticky top-0 bg-neutral-100 z-10">
-        <a href="../index.html"><img src="../imagenes/logo.svg" alt="Logo Empresa" class="w-24"/></a>
-        <i id="btn-menu" class="fa-solid fa-bars text-blue-600 text-3xl pr-6"></i>
+    <header class="flex flex-col pt-2 sticky top-0 bg-neutral-100 z-10 lg:w-10/12 lg:m-auto lg:flex-row lg:justify-between lg:items-center">
+
+        <div class="flex justify-between items-center">
+            <a href="../index.html"><img src="../imagenes/logo.svg" alt="Logo Empresa" class="w-24 lg:w-44"/></a>
+            <i id="btn-menu" class="fa-solid fa-bars text-blue-600 text-3xl pr-6 lg:hidden"></i>
+        </div>
+
+        <nav class="hidden lg:block pr-6">
+            <ul class="flex gap-9 text-lg">
+                <li><a href="#inicio" class="hover:text-blue-700">Inicio</a></li>
+                <li><a href="#nosotros" class="hover:text-blue-700">Sobre Nosotros</a></li>
+                <li><a href="#busqueda_perfil" class="hover:text-blue-700">Buscá tu candidato</a></li>
+                <li><a href="#contacto" class="hover:text-blue-700">Contactanos</a></li>
+            </ul>
+        </nav>
+
+        <nav id="menu-nav" class="hidden">
+            <ul class="flex flex-col justify-center bg-blue-600 text-white">
+                <li class="border-b-2 w-full text-center py-3"><a href="#">Inicio</a></li>
+                <li class="border-b-2 w-full text-center py-3"><a href="#">Sobre Nosotros</a></li>
+                <li class="border-b-2 w-full text-center py-3"><a href="#">Buscá tu candidato</a></li>
+                <li class="w-full text-center py-3"><a href="#">Contactanos</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav id="menu-nav" class="hidden">
-        <ul class="flex flex-col justify-center bg-blue-600 text-white">
-            <li class="border-b-2 w-full text-center py-3"><a href="#">Inicio</a></li>
-            <li class="border-b-2 w-full text-center py-3"><a href="#">Sobre Nosotros</a></li>
-            <li class="border-b-2 w-full text-center py-3"><a href="#">Buscá tu candidato</a></li>
-            <li class="w-full text-center py-3"><a href="#">Contactanos</a></li>
-        </ul>
-    </nav>
 
-    <main class="h-screen w-10/12 m-auto">
-        <div id="contenedorDatos" class="flex flex-col mt-24 gap-6">
+    <main class="h-screen w-7/12 m-auto">
+        <div id="contenedorDatos" class="flex flex-col mt-24 gap-6 lg:gap-20">
             <div id="info" class="self-center">
-                <img src="../imagenes/perfil.jpg" alt="Foto candidato" class="w-30 m-auto rounded-full border-2 border-slate-900 mb-3"/>
-                <span class="mt-3 text-lg text-center" id="infoClick">Haz click sobre los íconos para ver la información</span>
+                <img src="../imagenes/perfil.jpg" alt="Foto candidato" class="w-30 m-auto rounded-full border-2 border-slate-900 mb-3 lg:w-50"/>
+                <span class="mt-3 text-lg text-center lg:text-2xl" id="infoClick">Haz click sobre los íconos para ver la información</span>
                 <div id="parrafoSobreMi" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Sobre Mi</p>
-                    <p class="text-sm text-center">Hola! Soy Juan Rodriguez y soy ingeniero aerounautico. Me gradué en la universidad de Harvard y trabajé 5 años para la NASA.</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700 lg:text-2xl">Sobre Mi</p>
+                    <p class="text-sm text-center lg:text-lg">Hola! Soy Juan Rodriguez y soy ingeniero aerounautico. Me gradué en la universidad de Harvard y trabajé 5 años para la NASA.</p>
                 </div>
                 <div id="parrafoEmail" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Correo Electronico</p>
-                    <p class="text-sm text-center">juan.rodriguez@gmail.com</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700 lg:text-2xl">Correo Electronico</p>
+                    <p class="text-sm text-center lg:text-lg">juan.rodriguez@gmail.com</p>
                 </div>
                 <div id="parrafoNacimiento" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Fecha de nacimiento</p>
-                    <p class="text-sm text-center">22/03/1978</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700 lg:text-2xl">Fecha de nacimiento</p>
+                    <p class="text-sm text-center lg:text-lg">22/03/1978</p>
                 </div>
                 <div id="parrafoUbi" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Ubicación</p>
-                    <p class="text-sm text-center">Madrid, Langosta 2879</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700 lg:text-2xl">Ubicación</p>
+                    <p class="text-sm text-center lg:text-lg">Madrid, Langosta 2879</p>
                 </div>
                 <div id="parrafoTel" class="hidden">
-                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700">Celular</p>
-                    <p class="text-sm text-center">322-2457894</p>
+                    <p class="text-2xl font-bold my-3 text-center text-lg text-blue-700 lg:text-2xl">Celular</p>
+                    <p class="text-sm text-center lg:text-lg">322-2457894</p>
                 </div>
             </div>
             <div id="listaDatos">
                 <ul class="flex justify-evenly text-xl">
-                    <li id="sobreMi" class="flex flex-col text-xs items-center"><i class="fa-solid fa-user text-lg text-blue-700"></i>Sobre mi</li>
-                    <li id="email" class="flex flex-col text-xs items-center"><i class="fa-solid fa-envelope text-lg text-blue-700"></i>Email</li>
-                    <li id="nacimiento" class="flex flex-col text-xs items-center"><i class="fa-solid fa-calendar-days text-lg text-blue-700"></i>Fecha de <br> nacimiento</li>
-                    <li id="ubicacion" class="flex flex-col text-xs items-center text-center"><i class="fa-solid fa-map-location-dot text-lg text-blue-700"></i>Ubicación</li>
-                    <li id="telefono" class="flex flex-col text-xs items-center"><i class="fa-solid fa-phone text-lg text-blue-700"></i>Tel</li>
+                    <li id="sobreMi" class="flex flex-col text-xs items-center lg:text-lg"><i class="fa-solid fa-user text-lg text-blue-700 lg:text-2xl"></i>Sobre mi</li>
+                    <li id="email" class="flex flex-col text-xs items-center lg:text-lg"><i class="fa-solid fa-envelope text-lg text-blue-700 lg:text-2xl"></i>Email</li>
+                    <li id="nacimiento" class="flex flex-col text-xs items-center lg:text-lg"><i class="fa-solid fa-calendar-days text-lg text-blue-700 lg:text-2xl"></i>Fecha de <br> nacimiento</li>
+                    <li id="ubicacion" class="flex flex-col text-xs items-center text-center lg:text-lg"><i class="fa-solid fa-map-location-dot text-lg text-blue-700 lg:text-2xl"></i>Ubicación</li>
+                    <li id="telefono" class="flex flex-col text-xs items-center lg:text-lg"><i class="fa-solid fa-phone text-lg text-blue-700 lg:text-2xl"></i>Tel</li>
                 </ul>
             </div>
         </div>
     </main>
 
     <footer class="bg-blue-700 text-white">
-        <div class="flex justify-between py-6">
+        <div class="flex justify-between py-6 lg:text-2xl lg:px-20">
             <p class="pl-4">Aon Corporation</p>
-            <div class="flex flex-col gap-1 pr-4 text-lg">
+            <div class="flex flex-col gap-1 pr-4 text-lg lg:text-2xl lg:flex-row lg:gap-6">
                 <a href="#">
                     <i class="fa-brands fa-instagram"></i>
                 </a>

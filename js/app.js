@@ -50,7 +50,6 @@ formContacto.addEventListener('submit', (e) => {
   e.preventDefault();
   mensajeEnviado();
 
-
 })
 
 // Animación de texto
@@ -115,6 +114,14 @@ function eliminarAlerta(referencia) {
 }
 
 function mensajeEnviado() {
+
+  const alerta = document.querySelector('.bg-green-300');
+
+  // Evita que el mensaje de error se siga repitiendo
+  if(alerta) {
+    alerta.remove();
+  }
+  
   let parrafo = document.createElement('p');
   parrafo.textContent = 'Mensaje enviado correctamente';
   parrafo.classList.add('bg-green-300', 'border-green-800', 'text-green-800', 'text-center', 'py-3' , 'px-6', 'mt-3');
